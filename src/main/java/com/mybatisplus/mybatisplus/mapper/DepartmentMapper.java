@@ -15,6 +15,4 @@ import java.io.Serializable;
  */
 public interface DepartmentMapper extends BaseMapper<Department> {
 
-    @Override
-    Department selectById(Serializable id);
 }
