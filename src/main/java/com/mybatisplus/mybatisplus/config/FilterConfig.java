@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+ * 过滤器配置类
+ */
 @Configuration
 public class FilterConfig {
 
