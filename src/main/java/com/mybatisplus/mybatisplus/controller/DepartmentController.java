@@ -47,7 +47,7 @@ public class DepartmentController {
         boolean save = iDepartmentService.save(department);
 
         PrintWriter writer = reps.getWriter();
-        writer.println(save ? "添夹部门信息成功！" : "添加失败！");
+        writer.println(save ? "success" : "filed");
         //关闭资源
         writer.close();
     }
