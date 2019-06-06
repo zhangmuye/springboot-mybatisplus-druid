@@ -1,6 +1,7 @@
 package com.mybatisplus.mybatisplus.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.*;
@@ -9,6 +10,7 @@ import java.io.IOException;
 @Configuration
 public class FilterConfig {
 
+    @Bean
     public FilterRegistrationBean filterRegistrationBean(){
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new Filter() {
