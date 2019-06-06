@@ -1,24 +1,28 @@
 package com.mybatisplus.mybatisplus.aop;
 
 import org.aopalliance.intercept.MethodInvocation;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * AOP控制类
  * 控制日志打印
  */
 @Aspect
+@Configuration
 public class ConfigAop {
     public static final Logger logger =  LoggerFactory.getLogger(ConfigAop.class);
 
     /**
      * 定义一个切入点
      */
-    @Pointcut(value = "execution(* com.mybatisplus.mybatisplus.mapper.*(..))")
+    @Pointcut(value = "execution(* com.mybatisplus.mybatisplus.mapper.*.*(..))")
     public void getLogger(){
 
     }
@@ -30,7 +34,7 @@ public class ConfigAop {
      * @throws Throwable
      */
     @Around(value = "getLogger()")
-    public Object around(MethodInvocation joinPoint) throws Throwable {
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = getTime();
         logger.info("访问开始时间："+startTime);
         Object proceed = joinPoint.proceed();
