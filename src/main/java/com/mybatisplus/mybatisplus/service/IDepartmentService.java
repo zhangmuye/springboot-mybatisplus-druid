@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-06-06
  */
 public interface IDepartmentService extends IService<Department> {
-
+    @Override
+    boolean save(Department entity);
 }
