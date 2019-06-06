@@ -3,6 +3,8 @@ package com.mybatisplus.mybatisplus.mapper;
 import com.mybatisplus.mybatisplus.entity.Department;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.io.Serializable;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface DepartmentMapper extends BaseMapper<Department> {
 
+    @Override
+    Department selectById(Serializable id);
 }
